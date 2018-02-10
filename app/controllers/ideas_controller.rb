@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  before_action :set_idea, only: [:show, :edit]
+  before_action :set_idea, only: [:show, :edit, :update]
 
   def index
     @ideas = Idea.all
@@ -9,6 +9,12 @@ class IdeasController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    @idea.update!(idea_params)
+    flash[:success] = "You have updated #{@idea.title}"
+    redirect_to idea_path(@idea)
   end
 
   private
