@@ -1,0 +1,7 @@
+%h1 #{@idea.title}
+
+%p #{@idea.body}
+
+= link_to "Edit", edit_idea_path(@idea)
+
+= link_to "Delete", idea_path(@idea), method: :delete

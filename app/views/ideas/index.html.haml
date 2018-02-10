@@ -1,0 +1,9 @@
+%h1 Ideas
+
+.ideas
+  - @ideas.each do |idea|
+    %h3
+      = link_to "#{idea.title}", idea_path(idea)
+
+.new-idea
+  = link_to "New Idea", new_idea_path
