@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  before_action :set_idea, only: [:show, :edit, :update]
+  before_action :set_idea, only: [:show, :edit, :update, :destroy]
 
   def index
     @ideas = Idea.all
@@ -15,6 +15,12 @@ class IdeasController < ApplicationController
     @idea.update!(idea_params)
     flash[:success] = "You have updated #{@idea.title}"
     redirect_to idea_path(@idea)
+  end
+
+  def destroy
+    @idea.destroy!
+    flash[:success] = "You have deleted #{@idea.title}"
+    redirect_to ideas_path
   end
 
   private
