@@ -2,5 +2,6 @@
 
 %p #{@idea.body}
 
-= link_to edit_idea_path(@idea) do
-  %p Edit
+= link_to "Edit", edit_idea_path(@idea)
+
+= link_to "Delete", idea_path(@idea), method: :delete
