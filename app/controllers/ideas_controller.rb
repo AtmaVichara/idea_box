@@ -8,6 +8,20 @@ class IdeasController < ApplicationController
   def show
   end
 
+  def new
+    @idea = Idea.new
+  end
+
+  def create
+    @idea = Idea.new(idea_params)
+    if @idea.save
+      flash[:success] = "You have created a new idea"
+      redirect_to idea_path(@idea)
+    else
+      render :new
+    end
+  end
+
   def edit
   end
 
