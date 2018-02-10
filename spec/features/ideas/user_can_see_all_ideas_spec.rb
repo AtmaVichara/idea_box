@@ -6,8 +6,6 @@ describe "user sees all ideas" do
       idea = create_list(:idea, 4)
       visit ideas_path
 
-      save_and_open_page
-
       expect(page).to have_link(idea[0].title)
       expect(page).to have_link(idea[1].title)
       expect(page).to have_link(idea[2].title)
