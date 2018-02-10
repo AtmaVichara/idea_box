@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+CSV.foreach("./data/ideas.csv", headers: true) do |row|
+  Idea.create!(title: row[:title], body: row[:body])
+end
