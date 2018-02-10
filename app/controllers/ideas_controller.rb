@@ -18,6 +18,7 @@ class IdeasController < ApplicationController
       flash[:success] = "You have created a new idea"
       redirect_to idea_path(@idea)
     else
+      flash[:alert] = "Something went wrong. Try again!!"
       render :new
     end
   end
