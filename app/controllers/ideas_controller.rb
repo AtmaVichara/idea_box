@@ -1,11 +1,14 @@
 class IdeasController < ApplicationController
-  before_action :set_idea, only: [:show]
+  before_action :set_idea, only: [:show, :edit]
+
+  def index
+    @ideas = Idea.all
+  end
 
   def show
   end
 
-  def index
-    @ideas = Idea.all
+  def edit
   end
 
   private
