@@ -4,9 +4,9 @@ describe "user sees single category" do
   context "navigate from index page" do
     it "shows single category" do
       category = create(:category)
-      idea = create(:idea, category_id: category)
-      idea2 = create(:idea, category_id: category)
-      idea3 = create(:idea, category_id: category)
+      idea = create(:idea, category_id: category.id)
+      idea2 = create(:idea, category_id: category.id)
+      idea3 = create(:idea, category_id: category.id)
 
       visit categories_path
 

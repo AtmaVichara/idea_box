@@ -1,0 +1,7 @@
+%h1 #{@category.name}
+
+.category-items
+  - @category.ideas.each do |idea|
+    %h3
+      = link_to "#{idea.title}", idea_path(idea)
+      
