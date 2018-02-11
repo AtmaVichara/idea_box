@@ -8,7 +8,7 @@ FactoryBot.define do
   factory :user do
     sequence(:username) { |n| "AtmaVicharaEsq#{n}"}
     sequence(:email) { |n| "living_in_atma#{n}@gmail.com"}
-    sequence(:password_digest) { |n| "password#{n}"}
+    sequence(:password) { |n| "password#{n}"}
   end
 
 end

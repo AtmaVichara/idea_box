@@ -9,7 +9,7 @@ describe 'user can create account' do
 
       fill_in "user[username]", with: 'AtmaVicharaEsq'
       fill_in "user[email]", with: "atma_vichara_jewel@gmail.com"
-      fill_in "user[password_digest]", with: "Linked through the net of Indra"
+      fill_in "user[password]", with: "Linked through the net of Indra"
       click_on "Sign Up"
 
       expect(current_path).to eq('/users/1')
