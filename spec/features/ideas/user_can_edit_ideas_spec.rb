@@ -3,7 +3,8 @@ require 'rails_helper'
 describe "user can edit an idea" do
   context "navigates to show page from index" do
     it "edits idea" do
-      idea = create(:idea)
+      category = create(:category)
+      idea = create(:idea, category_id: category.id)
 
       visit ideas_path
       click_link(idea.title)
