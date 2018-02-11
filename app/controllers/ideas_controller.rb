@@ -40,7 +40,7 @@ class IdeasController < ApplicationController
 
   private
     def idea_params
-      params.require(:idea).permit(:title, :body)
+      params.require(:idea).permit(:title, :body, :category_id)
     end
 
     def set_idea
