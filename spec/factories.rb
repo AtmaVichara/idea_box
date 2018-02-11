@@ -3,6 +3,7 @@ FactoryBot.define do
   factory :idea do
     sequence(:body) { |n| "This is idea number #{n}"}
     sequence(:title) { |n| "Title number #{n}"}
+    category
   end
 
   factory :user do
@@ -11,4 +12,7 @@ FactoryBot.define do
     sequence(:password_digest) { |n| "password#{n}"}
   end
 
+  factory :category do
+    sequence(:name) { |n| "#{n} Number of KettlePops"}
+  end
 end
