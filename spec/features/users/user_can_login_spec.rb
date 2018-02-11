@@ -3,13 +3,13 @@ require 'rails_helper'
 describe "user can login" do
   context "navigates to login page from welcome page" do
     it "logins in user" do
-      user = User.create!(username: "AtmaVichara", email: "AtmaV@gmail.com", password_digest: "password")
+      user = create(:user)
       visit root_path
 
       click_on "Login"
 
-      fill_in "email", with: "AtmaV@gmail.com"
-      fill_in "password", with: "password"
+      fill_in "email", with: "#{user.email}"
+      fill_in "password", with: "#{user.password_digest}"
       click_on "Login"
 
       expect(page).to eq(user_path(user))
