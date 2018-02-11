@@ -3,8 +3,9 @@ require 'rails_helper'
 describe "user can delete idea" do
   context "user navigates to show page" do
     it "deletes idea" do
-      idea1 = create(:idea)
-      idea2 = create(:idea)
+      category = create(:category)
+      idea1 = create(:idea, category_id: category.id)
+      idea2 = create(:idea, category_id: category.id)
 
       visit ideas_path
       click_link(idea1.title)
