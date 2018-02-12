@@ -5,5 +5,5 @@
 
 .user-ideas
   - @user.ideas.each do |idea|
-    %p
+    %h3
       = link_to idea.title, user_idea_path(@user, idea)
