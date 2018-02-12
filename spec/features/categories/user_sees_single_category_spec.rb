@@ -3,10 +3,11 @@ require 'rails_helper'
 describe "user sees single category" do
   context "navigate from index page" do
     it "shows single category" do
+      user = create(:user)
       category = create(:category)
-      idea = create(:idea, category_id: category.id)
-      idea2 = create(:idea, category_id: category.id)
-      idea3 = create(:idea, category_id: category.id)
+      idea = create(:idea, category_id: category.id, user_id: user.id)
+      idea2 = create(:idea, category_id: category.id, user_id: user.id)
+      idea3 = create(:idea, category_id: category.id, user_id: user.id)
 
       visit categories_path
 
