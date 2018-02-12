@@ -1,1 +1,9 @@
 %h1 Welcome #{@user.username}
+
+%p
+  = link_to "New Idea", new_user_idea_path(@user)
+
+.user-ideas
+  - @user.ideas.each do |idea|
+    %p
+      = link_to idea.title, user_idea_path(@user, idea)
