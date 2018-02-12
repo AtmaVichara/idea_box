@@ -10,13 +10,15 @@ class IdeasController < ApplicationController
 
   def new
     @idea = Idea.new
+    @user = User.find(params[:user_id])
   end
 
   def create
-    @idea = current_user.idea.new(idea_params)
+    user = User.find(params[:user_id])
+    @idea = user.ideas.new(idea_params)
     if @idea.save
       flash[:success] = "You have created a new idea"
-      redirect_to user_idea_path(@idea.user)
+      redirect_to user_idea_path(@idea.user, @idea)
     else
       flash[:alert] = "Something went wrong. Try again!!"
       render :new
@@ -24,6 +26,7 @@ class IdeasController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:user_id])
   end
 
   def update
