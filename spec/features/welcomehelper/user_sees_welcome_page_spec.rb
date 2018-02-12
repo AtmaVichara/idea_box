@@ -6,7 +6,7 @@ describe "user sees welcome page" do
       visit root_path
 
       expect(page).to have_link("Sign Up")
-      expect(page).to have_link("Login")
+      expect(page).to have_link("Log In")
     end
   end
 end
