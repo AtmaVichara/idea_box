@@ -9,6 +9,11 @@ require 'csv'
 
 Idea.destroy_all
 
+USERS = ['AtmaVichara', 'Dangodiply', 'Pinkrando', 'Megamess']
+EMAILS = ['rando@gmail.com', 'someother@hotmail.com', 'gipsycrypto@yahoo.com', 'authcash@gmail.com']
+PASSWORDS = ['password', '123456789']
+
+
 CSV.foreach("./data/ideas.csv", headers: true) do |row|
   Idea.create!(title: row[0], body: row[1])
 end
