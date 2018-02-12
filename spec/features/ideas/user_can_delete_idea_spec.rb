@@ -4,10 +4,11 @@ describe "user can delete idea" do
   context "user navigates to show page" do
     it "deletes idea" do
       category = create(:category)
-      idea1 = create(:idea, category_id: category.id)
-      idea2 = create(:idea, category_id: category.id)
+      user = create(:user)
+      idea1 = create(:idea, category_id: category.id, user_id: user.id)
+      idea2 = create(:idea, category_id: category.id, user_id: user.id)
 
-      visit ideas_path
+      visit user_path(user)
       click_link(idea1.title)
 
       click_on "Delete"

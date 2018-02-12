@@ -4,9 +4,10 @@ describe "user can edit an idea" do
   context "navigates to show page from index" do
     it "edits idea" do
       category = create(:category)
-      idea = create(:idea, category_id: category.id)
+      user = create(:user)
+      idea = create(:idea, category_id: category.id, user_id: user.id)
 
-      visit ideas_path
+      visit user_path(user)
       click_link(idea.title)
 
       click_on "Edit"
