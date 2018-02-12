@@ -3,7 +3,8 @@
 .ideas
   - @ideas.each do |idea|
     %h3
-      = link_to "#{idea.title}", idea_path(idea)
+      = link_to "#{idea.title}", user_idea_path(idea.user, idea)
 
-.new-idea
-  = link_to "New Idea", new_idea_path
+- if current_user
+  .new-idea
+    = link_to "New Idea", new_user_idea_path(current_user)
