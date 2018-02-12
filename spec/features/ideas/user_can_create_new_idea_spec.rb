@@ -3,8 +3,9 @@ require 'rails_helper'
 describe "user can create new idea" do
   context "links from from the ideas index" do
     it "creates new idea" do
+      user = create(:user)
       category = create(:category)
-      visit ideas_path
+      visit user_path(user)
 
       click_on "New Idea"
 

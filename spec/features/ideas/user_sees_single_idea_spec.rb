@@ -4,8 +4,9 @@ describe "user can see single idea" do
   context "user navigates to show from index" do
     it "sees single idea" do
       category = create(:category)
-      idea = create(:idea, category_id: category.id)
-      visit ideas_path
+      user = create(:user)
+      idea = create(:idea, category_id: category.id, user_id: user.id)
+      visit user_path(user)
 
       click_link idea.title
 
