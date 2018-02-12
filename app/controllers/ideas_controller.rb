@@ -13,7 +13,7 @@ class IdeasController < ApplicationController
   end
 
   def create
-    @idea = Idea.new(idea_params)
+    @idea = current_user.idea.new(idea_params)
     if @idea.save
       flash[:success] = "You have created a new idea"
       redirect_to user_idea_path(@idea.user)
