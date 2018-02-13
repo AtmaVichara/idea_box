@@ -10,6 +10,7 @@ describe "admin can create categories" do
       click_on "Create Category"
 
       fill_in 'category[name]', with: "Best Ideas"
+
       click_on "Create Category"
 
       expect(current_path).to eq(category_path(Category.last))
