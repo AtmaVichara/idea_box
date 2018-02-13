@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   resources :ideas, only: [:index]
 
-  resources :categories, only: [:index, :show]
+  resources :categories, only: [:index, :show, :new, :create]
 end
