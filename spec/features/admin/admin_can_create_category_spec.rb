@@ -4,6 +4,7 @@ describe "admin can create categories" do
   context "from category index page" do
     it "creates new category" do
       admin = create(:admin)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
       visit categories_path
 

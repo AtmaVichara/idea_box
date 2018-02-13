@@ -2,6 +2,7 @@ describe "admin can delete category spec" do
   context "from category show page" do
     it "deletes category" do
       admin = create(:admin)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
       category = create(:category)
       category2 = create(:category)
 
