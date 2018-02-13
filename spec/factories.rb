@@ -8,8 +8,15 @@ FactoryBot.define do
 
   factory :user do
     sequence(:username) { |n| "AtmaVicharaEsq#{n}"}
-    sequence(:email) { |n| "living_in_atma#{n}@gmail.com"}
+    sequence(:email)    { |n| "living_in_atma#{n}@gmail.com"}
     sequence(:password) { |n| "password#{n}"}
+  end
+
+  factory :admin, class: User do
+    sequence(:username) { |n| "AtmaVicharaEsq#{n}"}
+    sequence(:email)    { |n| "living_in_atma#{n}@gmail.com"}
+    sequence(:password) { |n| "password#{n}"}
+    role 1
   end
 
   factory :category do

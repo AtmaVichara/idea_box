@@ -1,0 +1,9 @@
+%h1 #{@category.name}
+
+.category-items
+  - @category.ideas.each do |idea|
+    %h3
+      = link_to "#{idea.title}", user_idea_path(idea.user, idea)
+
+%p
+  = link_to "Edit Category", edit_admin_category_path(@category)

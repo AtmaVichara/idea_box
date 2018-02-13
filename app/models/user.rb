@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   validates_presence_of :username, :email, :password_digest
-  has_secure_password
+  validates_uniqueness_of :username, :email
   has_many :ideas
+  has_secure_password
+
+  enum role: ['default', 'admin']
 end

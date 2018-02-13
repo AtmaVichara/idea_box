@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "welcome#index"
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
 
   resources :users, only: [:new, :create, :show] do
     resources :ideas, except: [:index]
@@ -11,5 +8,13 @@ Rails.application.routes.draw do
 
   resources :ideas, only: [:index]
 
-  resources :categories, only: [:index, :show, :new, :create, :destroy]
+  namespace :admin do
+    resources :categories
+  end
+
+  resources :categories, only: [:index, :show]
+
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
 end
