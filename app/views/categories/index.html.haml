@@ -4,3 +4,6 @@
   - @categories.each do |category|
     %h3
       = link_to "#{category.name}", category_path(category)
+
+.admin-create
+  = link_to "Create Category", new_category_path
