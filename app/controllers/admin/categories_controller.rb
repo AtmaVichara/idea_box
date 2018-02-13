@@ -1,5 +1,5 @@
 class Admin::CategoriesController < Admin::BaseController
-  before_action :set_category, only: [:destroy, :show, :edit]
+  before_action :set_category, only: [:destroy, :show, :edit, :update]
 
   def index
     @categories = Category.all
@@ -22,6 +22,11 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def edit
+  end
+
+  def update
+    @category.update!(category_params)
+    redirect_to admin_category_path(@category)
   end
 
   def destroy
