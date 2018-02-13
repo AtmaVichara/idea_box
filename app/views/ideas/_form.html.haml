@@ -8,6 +8,11 @@
     %br/
     = f.text_area :body
   %p
+    = f.label :images
+    - Image.all.each do |image|
+      = check_box_tag "image", image.id
+      = image_tag image.image_url
+  %p
     = f.label :category_id
     %br/
     = f.collection_select :category_id, Category.all.order(:name), :id, :name
