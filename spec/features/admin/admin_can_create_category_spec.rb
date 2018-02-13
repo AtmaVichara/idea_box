@@ -3,8 +3,8 @@ require "rails_helper"
 describe "admin can create categories" do
   context "from category index page" do
     it "creates new category" do
-      admin = factory(:admin)
-      
+      admin = create(:admin)
+
       visit categories_path
 
       click_on "Create Category"
