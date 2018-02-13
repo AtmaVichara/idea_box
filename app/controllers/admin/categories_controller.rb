@@ -1,4 +1,5 @@
-class Admin::CategoriesController < ApplicationController
+class Admin::CategoriesController < Admin::BaseController
+  before_action :set_category, only: [:destroy]
 
   def new
     @category = Category.new
@@ -13,10 +14,19 @@ class Admin::CategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @category.destroy!
+    redirect_to categories_path
+  end
+
   private
 
     def category_params
       params.require(:category).permit(:name)
+    end
+
+    def set_category
+      @category = Category.find(params[:id])
     end
 
 end
