@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   resources :ideas, only: [:index]
 
-  resources :categories, only: [:index, :show, :new, :create, :destroy]
+  namespace :admin do
+    resources :categories, only: [:new, :create, :destroy, :edit]
+  end
+
+  resources :categories, only: [:index, :show]
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
