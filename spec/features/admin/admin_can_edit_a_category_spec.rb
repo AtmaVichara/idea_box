@@ -12,7 +12,7 @@ describe "admin can edit category" do
       click_on "Edit"
 
       fill_in 'category[name]', with: "World Changers"
-      click_on "Edit Category"
+      click_on "Update Category"
 
       expect(current_path).to eq(admin_category_path(category))
       expect(page).to have_content("World Changers")

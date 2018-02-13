@@ -14,7 +14,7 @@ describe "admin can create categories" do
 
       click_on "Create Category"
 
-      expect(current_path).to eq(category_path(Category.last))
+      expect(current_path).to eq(admin_category_path(Category.last))
       expect(page).to have_content("Best Idea")
     end
   end
