@@ -6,7 +6,7 @@ describe "admin can delete category spec" do
       category = create(:category)
       category2 = create(:category)
 
-      visit categories_path
+      visit admin_categories_path
 
       within("#category_#{category.id}") do
         click_on "Delete"

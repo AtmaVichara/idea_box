@@ -6,7 +6,7 @@ describe "admin can create categories" do
       admin = create(:admin)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-      visit categories_path
+      visit admin_categories_path
 
       click_on "Create Category"
 
