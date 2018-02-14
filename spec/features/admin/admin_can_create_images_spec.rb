@@ -15,8 +15,7 @@ describe "admin can create new images" do
       click_on "Add Image"
 
       expect(current_path).to eq(admin_images_path)
-      expect(page).to have_xpath("/html/body/img")
-      expect(page).to have_content("Catbug!!!")
+      expect(page).to have_xpath("/html/body/div/a/img")
     end
   end
 end
