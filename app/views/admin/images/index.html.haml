@@ -1,0 +1,9 @@
+%h1 Images
+
+- @images.each_with_index do |image, index|
+  %p Image #{index + 1}
+  = image_tag image.image_url
+  %br/
+  = link_to "Delete", admin_image_path(image), method: :delete
+
+= link_to "Add New Image", new_admin_image_path

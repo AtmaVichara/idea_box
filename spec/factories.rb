@@ -22,4 +22,8 @@ FactoryBot.define do
   factory :category do
     sequence(:name) { |n| "#{n} Number of KettlePops"}
   end
+
+  factory :image do
+    image_url 'https://d30y9cdsu7xlg0.cloudfront.net/png/17148-200.png'
+  end
 end
