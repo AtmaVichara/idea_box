@@ -11,7 +11,7 @@ describe "admin sees single image" do
 
       expect(page).to have_content(image.name)
       expect(page).to have_button("Delete")
-      expect(page).to have_xpath("/html/body/img")
+      expect(page).to have_xpath("/html/body/div/img")
     end
   end
 end
