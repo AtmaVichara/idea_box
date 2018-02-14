@@ -1,9 +1,11 @@
 %nav
-  %div
+  %div.home
+    = link_to "IdeaBox", root_path
+  %div.link
     = link_to "Ideas", ideas_path
-  %div
+  %div.link
     = link_to "Categories", categories_path
-  %div
+  %div.link
     = link_to "Logout", logout_path, method: :delete
-  %div
+  %div.link
     = link_to "Account", user_path(current_user)
