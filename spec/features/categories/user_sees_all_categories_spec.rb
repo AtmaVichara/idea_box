@@ -4,9 +4,13 @@ describe 'user sees all categories' do
   context 'from category index page' do
     it 'shows all categories' do
       category = create_list(:category, 4)
+      user = create(:user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit categories_path
+      visit root_path
+      click_link "Categories"
 
+      expect(current_path).to eq(categories_path)
       expect(page).to have_link(category[0].name)
       expect(page).to have_link(category[1].name)
       expect(page).to have_link(category[2].name)
