@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user?(user)
-    current_user.id == user.id
+    current_user.id == user.id if current_user
   end
 
 end
