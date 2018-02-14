@@ -5,6 +5,7 @@ describe "admin can delete category spec" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
       category = create(:category)
       category2 = create(:category)
+      idea = create(:idea, category_id: category.id, user_id: admin.id)
 
       visit admin_categories_path
 
@@ -14,6 +15,7 @@ describe "admin can delete category spec" do
 
       expect(current_path).to eq(categories_path)
       expect(page).to_not have_content(category.name)
+      expect(page).to have_content(category2.name)
     end
   end
 end

@@ -3,9 +3,10 @@ require 'rails_helper'
 describe "user can see single idea" do
   context "user navigates to show from index" do
     it "sees single idea" do
-      category = create(:category)
-      user = create(:user)
-      idea = create(:idea, category_id: category.id, user_id: user.id)
+      category  = create(:category)
+      user      = create(:user)
+      idea      = create(:idea, category_id: category.id, user_id: user.id)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       visit user_path(user)
 
       click_link idea.title
