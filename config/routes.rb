@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :ideas, except: [:index]
   end
 
-  resources :ideas, only: [:index]
+  resources :ideas, only: [:index, :show]
 
   namespace :admin do
     resources :categories
