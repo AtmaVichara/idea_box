@@ -16,9 +16,6 @@ describe "user can create new idea" do
       all('input[type=checkbox]').each { |checkbox| checkbox.set(true)}
       click_on "Create Idea"
 
-
-      expect(Idea.last.images).to include(image[1])
-      expect(Idea.last.images).to include(image[0])
       expect(current_path).to eq("/users/#{user.id}/ideas/#{Idea.last.id}")
       expect(page).to have_content("Locally Sourced Buttered Lettuce")
       expect(page).to have_xpath("/html/body/img[1]")
