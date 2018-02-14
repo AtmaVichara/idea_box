@@ -1,0 +1,11 @@
+%nav
+  %div
+    = link_to "Ideas", ideas_path
+  %div
+    = link_to "Images", admin_images_path
+  %div
+    = link_to "Categories", admin_categories_path
+  %div
+    = link_to "Logout", logout_path, method: :delete
+  %div
+    = link_to "Account", user_path(current_user)

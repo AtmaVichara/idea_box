@@ -8,18 +8,11 @@
     = javascript_include_tag 'application'
 
   %body
-    %nav
-      %div
-        = link_to "Ideas", ideas_path
-      - if current_user
-        %div
-          = link_to "Logout", logout_path, method: :delete
-        %div
-          = link_to "Account", user_path(current_user)
-      - if !current_user
-        %div
-          = link_to "Sign Up", new_user_path
-        %div
-          = link_to "Log In", login_path
+    - if current_user && current_user.admin?
+      = render 'layouts/admin_navbar'
+    - elsif current_user
+      = render 'layouts/user_navbar'
+    - else
+      = render 'layouts/guest_navbar'
 
     = yield

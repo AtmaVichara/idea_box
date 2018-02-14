@@ -21,12 +21,12 @@ class Admin::ImagesController < Admin::BaseController
   def destroy
     @image.destroy
     redirect_to admin_images_path
-  end 
+  end
 
   private
 
     def image_params
-      params.require(:image).permit(:image_url)
+      params.require(:image).permit(:image_url, :name)
     end
 
     def set_image
