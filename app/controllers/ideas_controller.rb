@@ -16,6 +16,7 @@ class IdeasController < ApplicationController
   def create
     user = User.find(params[:user_id])
     @idea = user.ideas.new(idea_params)
+    @idea.set_images(params[:image])
     if @idea.save
       flash[:success] = "You have created a new idea"
       redirect_to user_idea_path(@idea.user, @idea)

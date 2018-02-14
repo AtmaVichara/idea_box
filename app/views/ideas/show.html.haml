@@ -1,5 +1,8 @@
 %h1 #{@idea.title}
 
+- @idea.images.each do |image|
+  = image_tag image.image_url
+
 %p #{@idea.body}
 
 = link_to "Edit", edit_user_idea_path(@idea.user, @idea)
