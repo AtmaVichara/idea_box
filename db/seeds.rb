@@ -40,5 +40,5 @@ CSV.foreach("./data/ideas.csv", headers: true) do |row|
 end
 
 IMAGES.each do |image|
-  Image.create!(image_url: image[1], name: [0])
+  Image.create!(image_url: image[1], name: image[0])
 end

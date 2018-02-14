@@ -1,5 +1,5 @@
 class Admin::ImagesController < Admin::BaseController
-  before_action :set_image, only: [:destroy]
+  before_action :set_image, only: [:destroy, :show]
 
   def index
     @images = Image.all
@@ -7,6 +7,9 @@ class Admin::ImagesController < Admin::BaseController
 
   def new
     @image = Image.new
+  end
+
+  def show
   end
 
   def create

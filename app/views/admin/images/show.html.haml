@@ -1,0 +1,6 @@
+.image-show
+  %h1 #{@image.name}
+
+  = image_tag @image.image_url
+
+  = link_to "Delete", admin_image_path(@image), method: :delete, :class => "delete-button"

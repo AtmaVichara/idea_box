@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+@mixin delete-button {
+  margin-top: 40px;
+  border: 2px solid #f44336;
+  color: black;
+  font-size: 16px;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: #f44336;
+  }
+}
+
+body {
+  background: {
+    image: url('https://www.walldevil.com/wallpapers/a89/minimalist-wallpaper-desktop-backgrounds-wallpapers-aiddblgig.jpg');
+    size: cover;
+  }
+  font: {
+    family: 'Raleway';
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+    &:hover {
+      color: $muted-purple;
+    }
+  }
+}
+
+.delete-button {
+  @include delete-button;
+}
