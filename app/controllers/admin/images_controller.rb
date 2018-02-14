@@ -1,4 +1,5 @@
 class Admin::ImagesController < Admin::BaseController
+  before_action :set_image, only: [:destroy]
 
   def index
     @images = Image.all
@@ -17,10 +18,19 @@ class Admin::ImagesController < Admin::BaseController
     end
   end
 
+  def destroy
+    @image.destroy
+    redirect_to admin_images_path
+  end 
+
   private
 
     def image_params
       params.require(:image).permit(:image_url)
+    end
+
+    def set_image
+      @image = Image.find(params[:id])
     end
 
 end

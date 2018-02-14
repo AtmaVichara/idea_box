@@ -11,7 +11,7 @@ describe "admin can delete images" do
 
       click_on "Delete"
 
-      expect(page).to not_have('Image 1')
+      expect(page).to_not have_content('Image 1')
     end
   end
-end 
+end
