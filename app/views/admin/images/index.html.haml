@@ -1,7 +1,7 @@
 %h1 Images
 
-- @images.each_with_index do |image, index|
-  %p Image #{index + 1}
+- @images.each do |image|
+  %p #{image.name}
   = image_tag image.image_url
   %br/
   = link_to "Delete", admin_image_path(image), method: :delete
