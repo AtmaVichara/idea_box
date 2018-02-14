@@ -1,5 +1,6 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user?, only: [:edit, :update, :destroy]
 
   def index
     @ideas = Idea.all
@@ -50,4 +51,9 @@ class IdeasController < ApplicationController
     def set_idea
       @idea = Idea.find(params[:id])
     end
+
+    def correct_user?
+      redirect_to user_idea_path(@idea) unless current_user?(@idea.user)
+    end
+
 end
