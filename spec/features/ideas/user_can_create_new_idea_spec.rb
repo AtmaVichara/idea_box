@@ -6,6 +6,7 @@ describe "user can create new idea" do
       user = create(:user)
       category = create(:category)
       image = create_list(:image, 2)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       visit user_path(user)
 
       click_on "New Idea"
