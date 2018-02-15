@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
-@mixin delete-button {
+@mixin button($color) {
   margin-top: 40px;
-  border: 2px solid #f44336;
+  border: 2px solid $color;
   color: black;
   font-size: 16px;
   padding: 10px 24px;
@@ -12,7 +12,7 @@
   border-radius: 8px;
 
   &:hover {
-    background-color: #f44336;
+    background-color: $color;
   }
 }
 
@@ -35,5 +35,9 @@ body {
 }
 
 .delete-button {
-  @include delete-button;
+  @include button(#f44336);
+}
+
+.edit-button {
+  @include button(#008CBA);
 }

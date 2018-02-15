@@ -32,6 +32,8 @@ class IdeasController < ApplicationController
   end
 
   def update
+    @idea.images.clear
+    @idea.set_images(params[:image])
     @idea.update!(idea_params)
     flash[:success] = "You have updated #{@idea.title}"
     redirect_to user_idea_path(@idea.user)
