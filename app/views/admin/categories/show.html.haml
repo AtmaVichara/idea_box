@@ -6,4 +6,4 @@
       = link_to "#{idea.title}", user_idea_path(idea.user, idea)
 
 %p
-  = link_to "Edit Category", edit_admin_category_path(@category)
+  = link_to "Edit Category", edit_admin_category_path(@category), :class => "edit-button"
