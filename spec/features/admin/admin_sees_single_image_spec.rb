@@ -10,7 +10,7 @@ describe "admin sees single image" do
       visit admin_image_path(admin, image)
 
       expect(page).to have_content(image.name)
-      expect(page).to have_button("Delete")
+      expect(page).to have_link("Delete")
       expect(page).to have_xpath("/html/body/div/img")
     end
   end
