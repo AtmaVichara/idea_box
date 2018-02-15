@@ -6,7 +6,9 @@ class Idea < ApplicationRecord
   has_many :images, through: :idea_images
 
   def set_images(params)
-    images << params.map { |i| Image.find(i) }
+    unless params.nil?
+      images << params.map { |i| Image.find(i) }
+    end
   end
 
 end
