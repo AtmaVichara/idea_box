@@ -1,19 +1,22 @@
 = form_for [@user, @idea] do |f|
-  %p.title
-    = f.label :title
-    %br/
-    = f.text_field :title
-  %p.body
-    = f.label :body
-    %br/
-    = f.text_area :body
-  %p.image
-    = f.label :images
-    - Image.all.each do |image|
-      = check_box_tag "image[]", image.id
-      = image_tag image.image_url
-  %p
+  %h3.category-id
     = f.label :category_id
     %br/
     = f.collection_select :category_id, Category.all.order(:name), :id, :name
-  = f.submit
+  %h3.title
+    = f.label :title
+    %br/
+    = f.text_field :title, :class => 'title'
+  %h3.body
+    = f.label :body
+    %br/
+    = f.text_area :body
+  %h3
+    = f.label :images
+    %br/
+    .images-select
+      - Image.all.each do |image|
+        %br/
+        = check_box_tag "image[]", image.id
+        = image_tag image.image_url
+  = f.submit class: "submit"
