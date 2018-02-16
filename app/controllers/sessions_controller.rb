@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       flash[:success] = "Login Successful. Welcome #{user.username}"
       redirect_to user_path(user)
     else
-      flash[:alert] = "Login Failed.\nPlease make sure your emaila and password are correct."
+      flash[:alert] = "Login Failed.\nPlease make sure your email and password are correct."
       render :new
     end
   end
