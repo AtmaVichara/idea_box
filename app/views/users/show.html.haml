@@ -1,7 +1,7 @@
-%h1 Welcome #{current_user.username}
+.new-idea
+  = link_to "New Idea", new_user_idea_path(current_user), class: 'new-button'
 
-%p
-  = link_to "New Idea", new_user_idea_path(current_user)
+%h1 Welcome #{current_user.username}
 
 .user-ideas
   - current_user.ideas.each do |idea|

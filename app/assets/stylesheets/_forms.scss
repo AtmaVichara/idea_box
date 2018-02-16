@@ -1,0 +1,68 @@
+textarea {
+  width: 50%;
+  height: 150px;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  resize: none;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  margin-top: 5px;
+  font: {
+    size: 12px;
+  }
+}
+
+label {
+  font-weight: bold;
+}
+
+input.title {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font: {
+    weight: bold;
+    size: 20px;
+  }
+}
+
+.images-select {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  img {
+    margin: 5px 5px;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 10px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-weight: bold;
+  width: 15%;
+  text-align: center;
+}
+
+.username, .email, .password, #password, #email, .name, .image-url {
+  width: 15%;
+  padding: 10px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font: {
+    size: 12px;
+  }
+}

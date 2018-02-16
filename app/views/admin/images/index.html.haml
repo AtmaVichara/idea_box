@@ -1,7 +1,8 @@
+.new-image
+  = link_to "Add New Image", new_admin_image_path, :class => "new-button"
+
 %h1 Images
 
 .images
   - @images.each do |image|
     = link_to image_tag(image.image_url), admin_image_path(image)
-
-= link_to "Add New Image", new_admin_image_path

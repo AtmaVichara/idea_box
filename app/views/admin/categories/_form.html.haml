@@ -1,6 +1,6 @@
 = form_for [:admin, @category] do |f|
-  %p
+  %h3
     = f.label :name
     %br/
-    = f.text_field :name
-  = f.submit
+    = f.text_field :name, class: "name"
+  = f.submit class: 'submit'

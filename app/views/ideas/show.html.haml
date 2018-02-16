@@ -1,14 +1,18 @@
 %h1 #{@idea.title}
 
-%h2 Category : #{link_to @idea.category.name, category_path(@idea.category)}
+%h3 Category : #{link_to @idea.category.name, category_path(@idea.category)}
 
-- @idea.images.each do |image|
-  = image_tag image.image_url
+.idea-images
+  - @idea.images.each do |image|
+    = image_tag image.image_url
 
-%p #{@idea.body}
+.idea-container
+  .idea-box
+    %p #{@idea.body}
 
 - if current_user?(@idea.user)
-  %p
-    = link_to "Edit", edit_user_idea_path(@idea.user, @idea), :class => "edit-button"
+  .idea-links
+    %p.links
+      = link_to "Edit", edit_user_idea_path(@idea.user, @idea), :class => "edit-button"
 
-    = link_to "Delete", user_idea_path(@idea.user, @idea), method: :delete, :class => "delete-button"
+      = link_to "Delete", user_idea_path(@idea.user, @idea), method: :delete, :class => "delete-button"
