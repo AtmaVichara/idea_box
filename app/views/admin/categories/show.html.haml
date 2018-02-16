@@ -7,3 +7,6 @@
 
 %p
   = link_to "Edit Category", edit_admin_category_path(@category), :class => "edit-button"
+
+%div{id: ["category", @category.id]}
+  = link_to "Delete", admin_category_path(@category), method: :delete, :class => "delete-button"

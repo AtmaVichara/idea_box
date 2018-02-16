@@ -7,5 +7,3 @@
   - @categories.each do |category|
     %h3
       = link_to "#{category.name}", admin_category_path(category)
-    %div{id: ["category", category.id]}
-      = link_to "Delete", admin_category_path(category), method: :delete, :class => "delete-button"
