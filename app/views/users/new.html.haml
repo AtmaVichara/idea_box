@@ -4,13 +4,13 @@
   %p
     = f.label :username
     %br/
-    = f.text_field :username
+    = f.text_field :username, class: 'username'
   %p
     = f.label :email
     %br/
-    = f.email_field :email
+    = f.email_field :email, class: 'email'
   %p
     = f.label :password
     %br/
-    = f.password_field :password
-  = f.submit "Create Account"
+    = f.password_field :password, class: 'password'
+  = f.submit "Create Account", class: 'submit'

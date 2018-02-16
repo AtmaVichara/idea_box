@@ -1,9 +1,10 @@
 = form_for [:admin, @image] do |f|
   %p
     = f.label :name
-    = f.text_field :name
+    %br/
+    = f.text_field :name, class: 'name'
   %p
     = f.label :image_url
     %br/
-    = f.text_field :image_url
-  = f.submit "Add Image"
+    = f.text_field :image_url, class: 'image-url'
+  = f.submit "Add Image", class: 'submit'
