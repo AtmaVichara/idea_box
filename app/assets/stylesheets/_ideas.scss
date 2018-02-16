@@ -1,9 +1,26 @@
 .new-idea {
   margin-top: 30px;
+  padding-left: 10px;
 }
 
 .ideas {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.idea-container {
+  display: flex;
+  justify-content: center;
+
+  .idea-box {
+    width: 800px;
+    height: auto;
+    display: flex;
+  }
+}
+
+.idea-links {
+  display: flex;
+  justify-content: center;
 }
