@@ -1,6 +1,8 @@
 nav {
   border-bottom: 1px solid #000;
   display: flex;
+  padding: 10px 10px;
+
   font: {
     weight: bold;
   }
@@ -29,4 +31,5 @@ nav {
     }
     margin-right: 25px;
   }
+
 }

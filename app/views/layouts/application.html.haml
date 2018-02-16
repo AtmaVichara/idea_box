@@ -9,7 +9,7 @@
 
   %body
     - flash.each do |name, msg|
-      .flash-message
+      %div{class: name}
         #{name.upcase} #{name.upcase} #{msg}
 
     - if current_user && current_user.admin?
