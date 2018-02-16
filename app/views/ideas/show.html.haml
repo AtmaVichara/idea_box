@@ -1,6 +1,6 @@
-%h1 #{@idea.title}
-
 %h3 Category : #{link_to @idea.category.name, category_path(@idea.category)}
+
+%h1 #{@idea.title}
 
 .idea-images
   - @idea.images.each do |image|
