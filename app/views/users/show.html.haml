@@ -1,9 +1,9 @@
-%h1 Welcome #{@user.username}
+%h1 Welcome #{current_user.username}
 
 %p
-  = link_to "New Idea", new_user_idea_path(@user)
+  = link_to "New Idea", new_user_idea_path(current_user)
 
 .user-ideas
-  - @user.ideas.each do |idea|
+  - current_user.ideas.each do |idea|
     %h3
-      = link_to idea.title, user_idea_path(@user, idea)
+      = link_to idea.title, user_idea_path(current_user, idea)
