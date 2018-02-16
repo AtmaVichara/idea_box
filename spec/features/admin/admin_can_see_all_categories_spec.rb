@@ -13,7 +13,6 @@ describe "admin sees all categories and links" do
       expect(page).to have_link(category[2].name)
       expect(page).to have_link(category[3].name)
       expect(page).to have_link("Create Category")
-      expect(page).to have_link("Delete")
     end
   end
 end
