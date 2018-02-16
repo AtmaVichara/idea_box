@@ -1,7 +1,7 @@
-%h1 All Categories
-
 .admin-create
-  = link_to "Create Category", new_admin_category_path
+  = link_to "Create Category", new_admin_category_path, :class => 'new-button'
+
+%h1 All Categories
 
 .categories
   - @categories.each do |category|
