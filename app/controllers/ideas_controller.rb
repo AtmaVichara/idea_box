@@ -2,6 +2,7 @@ class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
   before_action :correct_user?, only: [:edit, :update, :destroy]
   before_action :user_logged_in?
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def index
     @ideas = current_user.ideas.all

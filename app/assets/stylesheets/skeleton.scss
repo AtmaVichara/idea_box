@@ -16,7 +16,12 @@
   }
 }
 
+html {
+  box-sizing: border-box;
+}
+
 body {
+  height: 100%;
   background: {
     image: url('https://www.walldevil.com/wallpapers/a89/minimalist-wallpaper-desktop-backgrounds-wallpapers-aiddblgig.jpg');
     size: cover;
@@ -32,6 +37,7 @@ body {
       color: $muted-purple;
     }
   }
+
 }
 
 .delete-button {

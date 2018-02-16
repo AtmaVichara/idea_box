@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show]
   before_action :user_logged_in?
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def show
   end

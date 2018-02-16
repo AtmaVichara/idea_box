@@ -8,6 +8,10 @@
     = javascript_include_tag 'application'
 
   %body
+    - flash.each do |name, msg|
+      %div{class: name}
+        #{name.upcase} #{name.upcase} #{msg}
+
     - if current_user && current_user.admin?
       = render 'layouts/admin_navbar'
     - elsif current_user
