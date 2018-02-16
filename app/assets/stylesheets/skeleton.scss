@@ -55,3 +55,7 @@ body {
 .new-button {
   @include button(#4CAF50);
 }
+
+.submit {
+  @include button(#ADD8E6)
+}

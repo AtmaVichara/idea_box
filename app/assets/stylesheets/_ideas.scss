@@ -17,10 +17,16 @@
     width: 800px;
     height: auto;
     display: flex;
+    margin-top: 15px;
   }
 }
 
 .idea-links {
+  display: flex;
+  justify-content: center;
+}
+
+.idea-images {
   display: flex;
   justify-content: center;
 }
