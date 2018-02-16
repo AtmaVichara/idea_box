@@ -51,3 +51,7 @@ body {
 .edit-button {
   @include button(#008CBA);
 }
+
+.new-button {
+  @include button(#4CAF50);
+}
