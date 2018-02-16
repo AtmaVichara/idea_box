@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show]
+  before_action :user_logged_in?
 
   def show
   end

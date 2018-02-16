@@ -4,9 +4,9 @@ class UsersController < ApplicationController
 
   def show
     user = User.find(params[:id])
-    unless session[:user_id] == user.id
-      flash[:notice] = "Sorry, you don't have access to this account!!"
+    unless current_user.id == user.id
       redirect_to root_path
+      flash[:notice] = "Sorry, you don't have access to this account!!"
     end
   end
 

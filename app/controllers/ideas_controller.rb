@@ -1,9 +1,10 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
   before_action :correct_user?, only: [:edit, :update, :destroy]
+  before_action :user_logged_in?
 
   def index
-    @ideas = Idea.all
+    @ideas = current_user.ideas.all
   end
 
   def show
@@ -55,7 +56,7 @@ class IdeasController < ApplicationController
     end
 
     def correct_user?
-      redirect_to user_idea_path(@idea) unless current_user?(@idea.user)
+      redirect_to user_idea_path(@idea) unless current_user?(@idea.user) || current_admin?
     end
 
 end
